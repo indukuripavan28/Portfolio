@@ -197,3 +197,11 @@ footer { text-align:center; padding:20px; background: rgba(20,20,20,0.85); color
     box-shadow: 0 0 15px #0ff, 0 0 30px #f0f;
   }
   
+  .exp-img {
+    width: 100%;       /* image stretches to card width */
+    max-height: 200px; /* keeps it from being too tall */
+    object-fit: cover; /* fills the area without distortion */
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
+  
