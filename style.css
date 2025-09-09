@@ -31,7 +31,7 @@ section p { font-size: 1.1rem; line-height:1.6; }
 /* Hero Section */
 .hero-content { display:flex; align-items:center; gap:30px; flex-wrap:wrap; }
 .profile-pic {
-  width:150px; height:150px; border-radius:50%;
+  width:200px; height:200px; border-radius:50%;
   border:4px solid #0ff;
   box-shadow:0 0 20px #0ff, 0 0 40px #f0f;
 }
@@ -90,19 +90,28 @@ section p { font-size: 1.1rem; line-height:1.6; }
   
 
 /* Experience & Projects */
+/* Vertical / phone-style Experience & Project cards */
 .exp-card, .project-card {
   background: rgba(0,0,0,0.5);
-  border:1px solid #0ff;
-  border-radius:15px;
-  padding:20px;
-  margin-bottom:20px;
-  box-shadow:0 0 15px #0ff, 0 0 30px #f0f;
+  border: 1px solid #0ff;
+  border-radius: 20px;      /* slightly more rounded for cyberpunk look */
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 25px #0ff, 0 0 50px #f0f;
   transition: transform 0.3s, box-shadow 0.3s;
+  max-width: 350px;         /* make it narrower, like phone screen */
+  width: 100%;              /* fills container width but respects max-width */
+  margin-left: auto;
+  margin-right: auto;       /* center the cards */
+  display: flex;
+  flex-direction: column;   /* vertical layout */
+  align-items: flex-start;  /* left-align content */
 }
 .exp-card:hover, .project-card:hover {
   transform: translateY(-10px) rotateZ(1deg);
-  box-shadow:0 0 25px #0ff, 0 0 50px #f0f;
+  box-shadow: 0 0 35px #0ff, 0 0 60px #f0f;
 }
+
 .exp-card h3, .project-card h3 { color:#0ff; margin-bottom:8px; }
 .exp-card .date { font-size:14px; color:#0ff; font-style:italic; margin-bottom:10px; display:block; }
 
@@ -155,23 +164,16 @@ footer { text-align:center; padding:20px; background: rgba(20,20,20,0.85); color
   .project-card h3 { color:#0ff; margin-bottom:8px; }
   .project-card ul { margin-left: 20px; margin-bottom: 10px; }
   .project-card a { color:#0ff; font-weight:bold; margin-right:10px; }
-  .project-img { 
-    width:100%; 
-    max-height:200px; 
-    object-fit:cover; 
-    border-radius:12px; 
-    margin-bottom:12px; 
+  .project-img,
+.exp-img {
+  width: 100%;       /* fills card width */
+  height: 180px;     /* fixed height for all images */
+  object-fit: cover; /* crops/resizes image to fit neatly without distortion */
+  border-radius: 12px;
+  margin-bottom: 12px;
 }
 
-
-
-
-
-
-
-
-  
-  .about-box {
+ .about-box {
     padding: 20px 25px;
     background: rgba(0,0,0,0.7);
     border: 2px solid #0ff;
@@ -205,3 +207,25 @@ footer { text-align:center; padding:20px; background: rgba(20,20,20,0.85); color
     margin-bottom: 12px;
   }
   
+  .exp-container, .project-container {
+    display: flex;
+    flex-wrap: wrap;       /* wraps to next line if screen is small */
+    gap: 20px;             /* space between cards */
+    justify-content: center;
+  }
+
+  /* Left-align technologies and key features inside cards */
+.project-card strong,
+.exp-card strong {
+  display: block;       /* forces each label on its own line */
+  margin-top: 10px;
+  margin-bottom: 6px;
+  text-align: left;     /* left-align label */
+}
+
+.project-card p,
+.exp-card p {
+  margin-left: 15px;    /* indentation for bullet points */
+  margin-bottom: 6px;
+  text-align: left;     /* left-align text */
+}
