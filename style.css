@@ -233,5 +233,6 @@ footer { text-align:center; padding:20px; background: rgba(20,20,20,0.85); color
 .github-link {
   color: #0ff;
   font-weight: bold;
-  margin-right: 15px; /* adds space to the right of each link */
+  display: block;      /* makes each link start on a new line */
+  margin-top: 8px;     /* space between links */
 }
